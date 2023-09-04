@@ -37,6 +37,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 callbacks = myCallback()
 
-model.fit(training_images,training_labels,epochs=10,callbacks=[callbacks])
+history = model.fit(training_images,training_labels,epochs=10,callbacks=[callbacks])
 
 model.evaluate(testing_images,testing_labels)
+print(f"Your model is trained for {len(history.epoch)} epochs")
